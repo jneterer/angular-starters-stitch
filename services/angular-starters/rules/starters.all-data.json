@@ -1,0 +1,65 @@
+{
+    "database": "starters",
+    "collection": "all-data",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "fields": {
+                "categories": {},
+                "demo_url": {},
+                "description": {},
+                "name": {},
+                "repo_url": {},
+                "status": {},
+                "type": {}
+            },
+            "read": true,
+            "insert": true,
+            "delete": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "status": {
+                "bsonType": "string",
+                "pattern": "^(inactive|active)$"
+            },
+            "categories": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "string"
+                },
+                "minItems": {
+                    "$numberInt": "1"
+                },
+                "uniqueItems": true
+            },
+            "demoUrl": {
+                "bsonType": "string"
+            },
+            "description": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            },
+            "repoUrl": {
+                "bsonType": "string"
+            },
+            "type": {
+                "bsonType": "string",
+                "pattern": "^(starter|theme|site)$"
+            }
+        },
+        "required": [
+            "type",
+            "name",
+            "description",
+            "categories",
+            "status"
+        ]
+    }
+}

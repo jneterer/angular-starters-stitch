@@ -1,0 +1,40 @@
+{
+    "database": "starters",
+    "collection": "categories",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "fields": {
+                "category_id": {},
+                "name": {},
+                "status": {}
+            },
+            "read": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "bsonType": "object",
+        "properties": {
+            "status": {
+                "bsonType": "string",
+                "pattern": "^(inactive|active)$"
+            },
+            "category_id": {
+                "bsonType": "string"
+            },
+            "name": {
+                "bsonType": "string"
+            }
+        },
+        "required": [
+            "name",
+            "category_id",
+            "status"
+        ]
+    }
+}
