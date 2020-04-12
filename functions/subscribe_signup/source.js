@@ -1,32 +1,26 @@
 exports = function(email, name){
-  const mailchimp_api_key = context.values.get("mailchimp_api_key");
-  const mailchimp_listid = context.values.get("mailchimp_listid");
+  const sendgrid_api_key = context.values.get("sendgrid_api_key");
   let body = {
-	  "email_address": email,
-	  "email_type": "text",
-	  "status": "subscribed",
-	  "tags": [
-      "Homepage Subscribe Form"
-    ]
+	  "contacts": [{
+	    "email": email
+	  }]
   };
   if (name) {
-    body['merge_fields'] = {
-      "FLNAME": name
-    };
+    body['contacts'][0]['unique_name'] = name;
   }
   return context.http
-    .post({ 
-      url: `https://us19.api.mailchimp.com/3.0/lists/${mailchimp_listid}/members`,
+    .put({ 
+      url: `https://api.sendgrid.com/v3/marketing/contacts`,
       headers: {
         "Authorization": [
-          `Basic ${mailchimp_api_key}`
+          `Bearer ${sendgrid_api_key}`
         ]
       },
       body: body,
       encodeBodyAsJSON: true
     })
     .then((response) => {
-      if (response['statusCode'] !== 200) {
+      if (response['statusCode'] !== 202) {
         console.log('Error: ', JSON.stringify(response));
       }
       return response;
