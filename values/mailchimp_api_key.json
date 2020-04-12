@@ -1,0 +1,5 @@
+{
+    "name": "mailchimp_api_key",
+    "value": "mailchimp_api_key",
+    "from_secret": true
+}

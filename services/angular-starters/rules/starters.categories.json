@@ -20,15 +20,15 @@
     "schema": {
         "bsonType": "object",
         "properties": {
-            "status": {
-                "bsonType": "string",
-                "pattern": "^(inactive|active)$"
-            },
             "category_id": {
                 "bsonType": "string"
             },
             "name": {
                 "bsonType": "string"
+            },
+            "status": {
+                "bsonType": "string",
+                "pattern": "^(inactive|active)$"
             }
         },
         "required": [

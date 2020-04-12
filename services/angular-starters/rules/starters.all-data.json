@@ -23,10 +23,6 @@
     "schema": {
         "bsonType": "object",
         "properties": {
-            "status": {
-                "bsonType": "string",
-                "pattern": "^(inactive|active)$"
-            },
             "categories": {
                 "bsonType": "array",
                 "items": {
@@ -48,6 +44,10 @@
             },
             "repoUrl": {
                 "bsonType": "string"
+            },
+            "status": {
+                "bsonType": "string",
+                "pattern": "^(inactive|active)$"
             },
             "type": {
                 "bsonType": "string",
