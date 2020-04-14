@@ -1,5 +1,5 @@
 {
-    "name": "angular-starters",
+    "name": "mongodb-atlas",
     "type": "mongodb-atlas",
     "config": {
         "readPreference": "primary",

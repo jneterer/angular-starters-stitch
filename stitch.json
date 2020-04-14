@@ -1,6 +1,10 @@
 {
     "config_version": 20180301,
-    "security": {},
+    "security": {
+        "allowed_request_origins": [
+            "https://angularstarters.com"
+        ]
+    },
     "custom_user_data_config": {
         "enabled": false
     },

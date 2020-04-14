@@ -1,6 +1,6 @@
 {
-    "database": "starters",
-    "collection": "categories",
+    "database": "starters-prod",
+    "collection": "categories-prod",
     "roles": [
         {
             "name": "default",

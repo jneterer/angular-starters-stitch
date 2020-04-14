@@ -1,6 +1,6 @@
 {
-    "database": "starters",
-    "collection": "all-data",
+    "database": "starters-prod",
+    "collection": "all-data-prod",
     "roles": [
         {
             "name": "default",
@@ -15,8 +15,9 @@
                 "type": {}
             },
             "read": true,
-            "insert": true,
-            "delete": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
             "additional_fields": {}
         }
     ],
